@@ -1,9 +1,9 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 class LoginPage {
   constructor(page) {
     this.page = page;
-    // this.pa= ("https://demowebshop.tricentis.com/");
+    // this.pageURL = "https://demowebshop.tricentis.com/";
     this.loginLink = page.locator("a[href='/login']");
     this.emailField = page.getByLabel("Email");
     this.passwordField = page.locator('#Password');
