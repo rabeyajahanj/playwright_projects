@@ -1,8 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
 class LoginPage {
   constructor(page) {
-    super();
     this.page = page;
     // this.pa= ("https://demowebshop.tricentis.com/");
     this.loginLink = page.locator("a[href='/login']");
