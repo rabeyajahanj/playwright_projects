@@ -1,6 +1,11 @@
 import { test, expect}from'@playwright/test';
 import { RegisterPage } from '../Pages/RegisterPage.js';
 
+// Helper function (you can put this at the top of the file or in a separate utils file)
+function uniqueEmail() {
+  return `user_${Date.now()}_${Math.floor(Math.random() * 10000)}@gmail.com`;
+}
+
 test('Register for New User', async ({ page }) => {   //title of the test case, constructor parameter
 
 const registerPage = new RegisterPage(page);     //called object
@@ -10,7 +15,11 @@ await registerPage.clickRegisterLink();
 await registerPage.selectGender();
 await registerPage.enterFirstName("John");
 await registerPage.enterLastName("Doe");
-await registerPage.enterEmail("42gmail.com");
+
+// ✅ Generate unique email every time
+  const email = uniqueEmail();
+  await registerPage.enterEmail(email);
+
 await registerPage.enterPassword("123456");
 await registerPage.enterConfirmPassword("123456");
 await registerPage.clickRegisterButton();
