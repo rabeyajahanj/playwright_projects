@@ -1,4 +1,4 @@
-import { test, expect}from'@playwright/test';
+import { test, expect }from'@playwright/test';
 import { RegisterPage } from '../Pages/RegisterPage.js';
 
 // Helper function (you can put this at the top of the file or in a separate utils file)
