@@ -15,11 +15,7 @@ async openBrowser() {
         waitUntil: 'domcontentloaded',
         timeout: 70000
     });
-    //   await this.page.setViewportSize({
-    //     width: 1920,
-    //     height: 1080
-    // });
-}
+  }
 
   async clickLoginLink() {
     await this.loginLink.click();
